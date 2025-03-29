@@ -34,7 +34,7 @@ define('SFT_PATH' , PHPWG_PLUGINS_PATH . SFT_DIR . '/');
 add_event_handler('loc_end_page_tail', 'sft');
 
 function sft(){
-	global $template, $stats;
+	global $template;
 	include_once(PHPWG_ROOT_PATH.'admin/include/functions.php');
 	$stats = get_pwg_general_statitics();
 
