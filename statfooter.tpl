@@ -1,3 +1,3 @@
 <span id="statfooter">
-<br><br>Page Views: {$stats['nb_views']}</br>
+<br><br>{$nb_views} page views</br>
 </span>

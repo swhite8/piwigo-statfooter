@@ -36,8 +36,24 @@ add_event_handler('loc_end_page_tail', 'sft');
 function sft(){
 	global $template, $stats;
 	include_once(PHPWG_ROOT_PATH.'admin/include/functions.php');
-	$template->assign('stats',get_pwg_general_statitics());
+	$stats = get_pwg_general_statitics();
 
+/* Stats Items:
+[nb_photos]
+[nb_categories]
+[nb_tags]
+[nb_image_tag]
+[nb_users]
+[nb_admins]
+[nb_groups]
+[nb_rates]
+[nb_views]
+[disk_usage]
+[nb_formats]
+[formats_disk_usage]
+*/
+
+	$template->assign('nb_views',number_format_human_readable($stats['nb_views']));
 	$template->set_filename('STAT_FOOTER', realpath(SFT_PATH.'statfooter.tpl'));
 	$template->append('footer_elements', $template->parse('STAT_FOOTER', true));
 }
